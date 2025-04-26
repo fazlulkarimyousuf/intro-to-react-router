@@ -8,9 +8,9 @@ import './Root.css'
 
 const Root = () => {
     return (
-        <div className='root-main'>
+        <div >
             <Header></Header>
-            <div >
+            <div className='root-main' >
                 <SideBar></SideBar>
             <Outlet></Outlet>
             </div>
