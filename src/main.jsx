@@ -9,6 +9,8 @@ import Mobiles from './components/Mobiles/Mobiles.jsx';
 import Laptops from './components/Laptops/Laptops.jsx';
 import Users from './components/Users/Users.jsx';
 import Users2 from './components/Users2/Users2.jsx';
+import UserDetlies from './components/UserDetails/UserDetails.jsx';
+import UserDetails from './components/UserDetails/UserDetails.jsx';
 
 
 const usersPromise = fetch('https://jsonplaceholder.typicode.com/users').then(res => res.json());
@@ -31,6 +33,11 @@ const router = createBrowserRouter([
           element: <Suspense fallback={<span>Loading......</span>}>
             <Users2 usersPromise={usersPromise}></Users2>
           </Suspense>,},
+          {
+            path: 'users/:userId',
+            // Component: UserDetalies,
+            Component: UserDetails,           
+          }
           ]
 
   },
@@ -49,7 +56,8 @@ const router = createBrowserRouter([
       It might have been  moved, deleted, or never existed in the first place.</h3>
       <p>
 🔍 Try going back to the [homepage] or check the URL for errors.
-If you believe this is a mistake, [contact support].</p>
+If you believe this is a mistake, [contact support].
+</p>
     </div>,
   
   },
