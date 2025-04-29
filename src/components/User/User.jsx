@@ -18,7 +18,6 @@ const User = ({user}) => {
     return (
         <div className='card'>
             <h3>{name}</h3>
-            <img src="" alt="" />
             <p>Email: {email}</p>
             <p><small>Phone: {phone}</small></p>
             {/* <button  className='button' >Contuc Us</button> */}

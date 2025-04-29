@@ -35,8 +35,8 @@ const router = createBrowserRouter([
           </Suspense>,},
           {
             path: 'users/:userId',
-            // Component: UserDetalies,
-            Component: UserDetails,           
+            loader: ({ params }) => fetch(`https://jsonplaceholder.typicode.com/users${params.userId}`),
+            Component: UserDetails,
           }
           ]
 
@@ -67,12 +67,12 @@ If you believe this is a mistake, [contact support].
   },
   {
     path:"/app2",
-    // element: <App></App>,
+
   },
 ]);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router={router}></RouterProvider>
-  </StrictMode>,
-)
+  </StrictMode>
+)  
